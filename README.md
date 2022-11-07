@@ -19,10 +19,12 @@ The parent thread will output the sorted array once all sorting threads have exi
 
 ## Detailed Explanation
 We first import all the necessary libraries required for the program. 
-Next, a global parameter N is defined and an array a[] is defined.
-A structure named Arr is defined and the structure variable is called Array.
-To sort and merge the array, we make use of merge sort. 
-The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm. 
-In this algorithm, the array is initially divided into two equal halves and then they are combined in a sorted manner.
-It is a recursive algorithm that continuously splits the array in half until it cannot be further divided. This means that if the array becomes empty or has only one element left, the dividing will stop, i.e. it is the base case to stop the recursion. 
-We also have a function called mergesort, which creates the threads and calls the merge function which sorts and merges the subsets.
+Next, a global parameter NUMBER_OF_THREADS is defined and array size, SIZE is defined.
+Two arrays of size = SIZE is also initialized. 
+A structure named A is defined and the structure variable is called parameters.
+To sort and merge the array, we make use of bubble sort algorithm. 
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order.
+sorter and merger threads are created to perform sorting and merging. 
+pthread_create(pthread_t * thread, const pthread_attr_t * attr, void * (*start_routine)(void *), void *arg); 
+
+pthread is created using the following syntax. here thread - returns the thread id, attr - Set to NULL if default thread attributes (detached state, scheduling poilcy,scheduling paramerter,inheritsched attribute, scope, guard size, stack address, stack size) are used, void * (*start_routine) - pointer to the function to be threaded (Function has a single argument: pointer to void), *arg - pointer to argument of function (To pass multiple arguments, send a pointer to a structure)
