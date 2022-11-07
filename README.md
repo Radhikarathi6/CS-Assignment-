@@ -31,3 +31,8 @@ pthread_create(pthread_t * thread, const pthread_attr_t * attr, void * (*start_r
 pthread is created using the following syntax. here thread - returns the thread id, attr - Set to NULL if default thread attributes (detached state, scheduling poilcy,scheduling paramerter,inheritsched attribute, scope, guard size, stack address, stack size) are used, void * (*start_routine) - pointer to the function to be threaded (Function has a single argument: pointer to void), *arg - pointer to argument of function (To pass multiple arguments, send a pointer to a structure)
 
 To terminate a thread, void pthread_exit(void *retval); is used, where retval - Return value of thread.
+
+join function is defined by - int pthread_join(pthread_t thread, void **retval); 
+The pthread_join() function waits for the thread specified bythread to terminate. If that thread has already terminated, then pthread_join() returns immediately.  The thread specified by thread must be joinable.
+If retval is not NULL, then pthread_join() copies the exit status of the target thread
+If multiple threads simultaneously try to join with the samenthread, the results are undefined.  If the thread calling pthread_join() is canceled, then the target thread will remain joinable i.e., it will not be detached.
