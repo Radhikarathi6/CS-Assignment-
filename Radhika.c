@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 #define SIZE 10
-#define NUMBER_OF_THREADS 2
+#define NUMBER_OF_THREADS 3
 
 void *sorter(void *params);    /* thread that performs basic sorting algorithm */
 void *merger(void *params);    /* thread that performs merging of results */
