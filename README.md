@@ -36,3 +36,5 @@ join function is defined by - int pthread_join(pthread_t thread, void **retval);
 The pthread_join() function waits for the thread specified bythread to terminate. If that thread has already terminated, then pthread_join() returns immediately.  The thread specified by thread must be joinable.
 If retval is not NULL, then pthread_join() copies the exit status of the target thread
 If multiple threads simultaneously try to join with the samenthread, the results are undefined.  If the thread calling pthread_join() is canceled, then the target thread will remain joinable i.e., it will not be detached.
+
+The malloc or memory allocation method in C is used to dynamically allocate a single large block of memory with the specified size. It returns a pointer of type void which can be cast into a pointer of any form. ptr = (cast-type*) malloc(byte-size)
