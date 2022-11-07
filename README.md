@@ -28,6 +28,7 @@ sorter and merger threads are created to perform sorting and merging.
 
 pthread_create(pthread_t * thread, const pthread_attr_t * attr, void * (*start_routine)(void *), void *arg); 
 pthread is created using the following syntax. here thread - returns the thread id, attr - Set to NULL if default thread attributes (detached state, scheduling poilcy,scheduling paramerter,inheritsched attribute, scope, guard size, stack address, stack size) are used, void * (*start_routine) - pointer to the function to be threaded (Function has a single argument: pointer to void), *arg - pointer to argument of function (To pass multiple arguments, send a pointer to a structure)
+Upon successful completion, pthread_create() stores the ID of the created thread in the location referenced by thread.
 
 To terminate a thread, void pthread_exit(void *retval); is used, where retval - Return value of thread.
 
