@@ -18,3 +18,11 @@ from which each thread is to begin sorting. Refer to the instructions in Project
 The parent thread will output the sorted array once all sorting threads have
 exited.
 
+## Detailed Explanation
+We first import all the necessary libraries required for the program. 
+Next, a global parameter N is defined and an array a[] is defined.
+A structure named Arr is defined and the structure variable is called Array.
+To sort and merge the array, we make use of merge sort. 
+The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm. 
+In this algorithm, the array is initially divided into two equal halves and then they are combined in a sorted manner.
+
